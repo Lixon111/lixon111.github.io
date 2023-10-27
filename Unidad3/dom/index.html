@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <ul id="mensajes">
+            
+        </ul>
+    </div>
+    <div>
+        <input type="text" id="txtmensaje">
+    </div>
+    <script>
+    window.onload=()=>{
+        var smensajes= document.querySelector('#mensajes')
+        var txtmes= document.querySelector('#txtmensaje')
+        var todo=""
+        txtmes.addEventListener('keyup',(evt)=>{
+
+            if(evt.keyCode==13){
+            todo+=`<li><div>${txtmes.value}</div></li>`   
+            txtmes.value=""
+            smensajes.innerHTML=todo.trim()
+            smensajes.scrollTop= smensajes.scrollHeight;
+            }
+            console.log(evt)
+        })
+    }
+    </script>
+</body>
+</html>
